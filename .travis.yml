@@ -15,7 +15,7 @@ install:
 
 before_script:
   - npm install -g mocha
-  - git clone --branch master https://${GH_REF} public
+  - git clone --branch gh-pages https://${GH_REF} public
 
 script: 
   - hexo cl
@@ -28,11 +28,11 @@ after_script:
   - git config user.email "jackey8616@gmail.com"
   - git add . 
   - git commit -m "Update by Travis-CI" 
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
 
 branches: 
   only: 
-    - master
+    - gh-pages
 
 env: 
   global: 
