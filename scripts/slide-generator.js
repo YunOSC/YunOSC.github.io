@@ -40,8 +40,10 @@ hexo.on("generateBefore", function(){
             var outPath = path.join(outPathRoot, 'slides');
             if (!fs.existsSync(outPath)) {
                 mkdirp(outPath, function (err) {
-                    if (err)
-                        throw err;
+                    if (err) {
+                        console.log(err);
+                        //throw err;
+                    }
                 });
             }
 
@@ -52,7 +54,10 @@ hexo.on("generateBefore", function(){
                 page: page
             });
             fs.writeFile(path.join(outPath, _item.toString().replace('.md', '.html')), pageData, function (err) {
-                if (err) throw err;
+                if (err) {
+                    console.log(err);
+                    // throw err;
+                }
             });
         }
         console.log(path.join(outPath, _item.toString()) + ' slide generated.');
