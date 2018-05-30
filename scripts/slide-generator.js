@@ -25,21 +25,21 @@ hexo.on("generateBefore", function(){
         if(fileName.substring(fileName .lastIndexOf("."))=='.md') {
 
             // Reading Markdown
-            var page = fs.readFileSync(path.join(sourceRoot, _item.toString()), 'UTF-8');
+            var fileName = _item.toString();
+            var page = fs.readFileSync(path.join(sourceRoot, fileName), 'UTF-8');
 
             // Reading title and date
             var title = yfm.parse(page).title;
-            var date = new Date(yfm.parse(page).date);
-            page = page.replace(/([\r\n\0]*?)---([\S\s]*?)---([\r\n\0]*?)/g, title+'\n');
+            var date = yfm.parse(page).date != undefined ? new Date(yfm.parse(page).date) : new Date();
+            page = page.replace(/([\r\n\0]*?)---([\S\s]*?)---([\r\n\0]*?)/g, title + '\n');
 
             // Concat output path
             var year = date.getFullYear().toString();
             var month = ("0" + (date.getMonth() + 1)).slice(-2).toString();
             var day = ("0" + date.getDate()).slice(-2).toString();
-            //var outPath = path.join(outPathRoot,year,month,day, title);
-            var outPath = path.join(outPathRoot, 'slides');
+            var outPath = path.join(outPathRoot, year, month, day, fileName.replace('.md', ''));
             if (!fs.existsSync(outPath)) {
-                mkdirp(outPath, function (err) {
+                mkdirp.sync(outPath, function (err) {
                     if (err) {
                         console.log(err);
                         //throw err;
@@ -50,17 +50,17 @@ hexo.on("generateBefore", function(){
             // Output to HTML file.
             var template = fs.readFileSync(templatePath, 'utf-8');
             var pageData = ejs.render(template, {
-                filename:title,
+                filename: title,
                 page: page
             });
-            fs.writeFile(path.join(outPath, _item.toString().replace('.md', '.html')), pageData, function (err) {
+            fs.writeFileSync(path.join(outPath, 'index-slide.html'), pageData, function (err) {
                 if (err) {
                     console.log(err);
                     // throw err;
                 }
             });
         }
-        console.log(path.join(outPath, _item.toString()) + ' slide generated.');
+        console.log(outPath + ' slide generated.');
     });
     console.log('Slides all generated.');
 });
