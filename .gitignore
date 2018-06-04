@@ -2,6 +2,9 @@
 Thumbs.db
 db.json
 *.log
+*.swp
+*.swo
+
 node_modules/
 public/
 .deploy*/
