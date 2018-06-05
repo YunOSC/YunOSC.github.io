@@ -179,6 +179,10 @@ Root /
 So keep in mind with `/` and `~`  
 And NEVER `rm -rf` these folders!!!!  
 
+---
+
+## Directory Structure  
+
 --
 
 我只講一次，仔細聽好了  
@@ -218,5 +222,149 @@ Ex2: mkdir Mario
 ```  
 
 --
+
+如果你看不懂英文，我可以翻譯給你聽。  
+```sh
+ls -> 列出當前目錄檔案
+cd -> 移至目標目錄
+mkdir -> 建立目錄
+```
+
+--
+
+如果你還是不懂，請聯繫社幹。  
+他們會拯救你。（應該吧...
+
+--
+
+玩權限我最會，檔案看得到用不到是不是很杜爛R？  
+```sh
+~> ls -l
+total 68
+drwxrwxr-x  2 clode clode 4096  六   1 15:46 bin/
+drwxr-xr-x  2 clode clode 4096  三   7 12:01 Desktop/
+drwxr-xr-x  2 clode clode 4096  三   7 12:01 Documents/
+drwxr-xr-x  5 clode clode 4096  六   5 11:34 Downloads/
+drwxrwxr-x  3 clode clode 4096  四  11 05:47 Font/
+drwxr-xr-x  2 clode clode 4096  三   7 12:01 Music/
+drwxr-xr-x  2 clode clode 4096  六   5 08:16 Pictures/
+drwxrwxr-x 18 clode clode 4096  六   3 19:29 Program/
+drwxr-xr-x  2 clode clode 4096  三   7 12:01 Public/
+-rw-rw-r--  1 clode clode 1398  三  17 15:51 song
+drwxr-xr-x  2 clode clode 4096  三   7 12:01 Templates/
+drwxrwxr-x  7 clode clode 4096  四  11 04:50 Themes/
+drwxrwxr-x 19 clode clode 4096  六   1 16:11 Tools/
+drwxrwxr-x  6 clode clode 4096  四  30 20:31 venv2.7/
+drwxrwxr-x  6 clode clode 4096  四  30 20:20 venv3.5/
+drwxr-xr-x  2 clode clode 4096  三   7 12:01 Videos/
+drwxrwxr-x  3 clode clode 4096  五  22 15:43 VirtualBox VMs/
+```
+這是我家，不要亂看。
+
+--
+
+講了目錄， 一定要講個權限R。
+![](/images/0x00/ls.png)  
+
+--
+
+```sh
+d = directory
+l = link
+- = nothing
+r = read
+w = write
+x = execute
+- = not allow
+```
+
+--
+
+看了很多字，是不是很煩？  
+我們來算一下數學吧！  
+我超愛算數學的！嘻嘻嘻嘻嘻！  
+
+--
+
+1 + 1 = 10  
+不要問我為什麼，記下來就對了。
+
+--
+
+1 + 2 + 4 = 111
+
+--
+
+回到權限。  
+![](/images/0x00/ls.png)  
+rwx你看到什麼了？  
+
+--
+
+3個一組，總共3組。
+```sh
+rwx rwx rwx
+ |   |  others
+ |   └─ group
+ └───── user
+```
+
+--
+
+```sh
+001 = --x
+010 = -w-
+011 = -wx
+...
+111 = rwx
+```
+你看出什麼了？  
+
+--
+
+成功的經驗是可以複製的，  
+我們依樣畫葫蘆。  
+```sh
+---rwx--- = 000 111 000 = 0 7 0
+r-x---r-- = 101 000 100 = 5 0 4
+...
+rwxrwxr-x = 111 111 101 = 7 7 5
+rwxrwxrwx = 111 111 111 = 7 7 7
+```
+
+--
+
+你的就是你的， 你們的也是你們的。  
+該你用，就你用，  
+不該你用，就不能用。  
+
+--
+
+教練！可是我還是想用！  
+```sh
+~> chmod [permission code] [file / directory]  
+```
+付費以開通VIP3權限！  
+
+--
+
+```sh
+Before:
+~> ls -l
+-rw-rw-r--  1 clode clode 1398  三  17 15:51 song
+
+After:
+~> chmod 666 song
+~> ls -l
+-rw-rw-rw-  1 clode clode 1398  三  17 15:51 song
+```
+哇，真是太6了。
+
+--
+
+我超ㄅ一ㄤˋ，整台電腦都是我的遊樂場。
+```sh
+sudo
+```
 
 
