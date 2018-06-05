@@ -5,6 +5,11 @@ tags:
 slidehtml:
   titleMerge: false
 ---
+## 第一節社課。  
+{% iframe ./slide.html 500 %}  
+[全螢幕](./slide.html)  
+
+<!-- Slide Start -->
 ## Yuntech Open-Source Club (YunOSC)  
 
 ---
