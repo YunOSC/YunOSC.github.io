@@ -1,5 +1,5 @@
 ---
-title: 0x00 Opensoruce Linux Python
+title: 0x01 Opensoruce Linux Python
 date: 2018-06-04 19:40:09
 tags:
 slidehtml:
@@ -10,7 +10,10 @@ slidehtml:
 [全螢幕](./slide.html)  
 
 <!-- Slide Start -->
-## Yuntech Open-Source Club (YunOSC)  
+<font size=9>Yuntech Open-Source Club  
+(YunOSC)</font>
+  
+<font size=6><p align=right>0x01 Opensource & Linux</p></font>  
 
 ---
 
@@ -37,11 +40,11 @@ slidehtml:
 <font size=5>
 Junior of YunTech CSIE,  
 YunNet system developer and maintainer,  
-Minister of Educate Section,  
+YunOSC Minister of Educate Section,  
 Pythoneer, trying to be a Pythonista,  
 Javer,  
 Also Vimer.
-Right now I'm in a deep hole called CTF.   
+Right now I'm in a deep hole called CTF and Deep Learning.   
 </font>
 </p>
 
@@ -165,7 +168,7 @@ Root /
 
 --
 
-![](/images/0x00/root.png)  
+![](/images/Lession/0x01/root.png)  
 這是我的根目錄。
 
 然後千萬不要`rm -rf /`  
@@ -173,7 +176,7 @@ Root /
 
 --
 
-![](/images/0x00/home.png)  
+![](/images/Lession/0x01/home.png)  
 這是我家。
 
 如果按照M$ 窗戶OS來看的話：  
@@ -213,18 +216,27 @@ Linux的終端機基本上可以說是常駐開啟。
 
 --
 
-```sh
+```sh  
 ls (list directory)
 Ex: ls
-
-cd (change directory)
-Ex: cd /
-Ex2: cd ~
+  
+cd (change directory)  
+Ex: cd /  
+Ex2: cd ~  
   
 mkdir (make directory)
 Ex: mkdir Nekopara
 Ex2: mkdir Mario
-```  
+
+rm (remove file or directory)
+Ex: rm [a.file]
+Ex2: rm -r [a.directory.and.every.file.inside]
+ ^
+ └ This will ask you to check delete.
+Ex3: rm -rf [Dont.ask.me.just.delete.it]
+ ^
+ └ This will not ask you, just delete every thing. 
+```
 
 --
 
@@ -233,6 +245,7 @@ Ex2: mkdir Mario
 ls -> 列出當前目錄檔案
 cd -> 移至目標目錄
 mkdir -> 建立目錄
+rm -> 移除檔案或目錄即其內容檔案
 ```
 
 --
@@ -269,7 +282,7 @@ drwxrwxr-x  3 clode clode 4096  五  22 15:43 VirtualBox VMs/
 --
 
 講了目錄， 一定要講個權限R。
-![](/images/0x00/ls.png)  
+![](/images/Lession/0x01/ls.png)  
 
 --
 
@@ -301,7 +314,7 @@ x = execute
 --
 
 回到權限。  
-![](/images/0x00/ls.png)  
+![](/images/Lession/0x01/ls.png)  
 rwx你看到什麼了？  
 
 --
@@ -348,8 +361,22 @@ rwxrwxrwx = 111 111 111 = 7 7 7
 教練！可是我還是想用！  
 ```sh
 ~> chmod [permission code] [file / directory]  
+or
+~> chmod a+x [file / directory]
 ```
 付費以開通VIP3權限！  
+
+--
+
+等等，教練！  
+你沒講過第2種！  
+
+| Subject    | Action        | Attribute   |  
+| :--------- | :------------ | :---------- |  
+| [a] all    | [+] add       | [r] read    |  
+| [u] user   | [-] substract | [w] write   |  
+| [g] group  | [=] set       | [x] execute |  
+| [o] others | 
 
 --
 
@@ -365,11 +392,52 @@ After:
 ```
 哇，真是太6了。
 
+---
+
+## Permission & Installation  
+
 --
 
-我超ㄅ一ㄤˋ，整台電腦都是我的遊樂場。
+素肚？素起來，還要加辣！  
 ```sh
-sudo
+~> sudo
 ```
+
+--
+
+好寶寶公約：  
+我絕對不會用sudo異動任何未知檔案。  
+使用sudo命令執行任何指令前，再三確認。  
+
+--
+
+案例分享：  
+Gitlab工程師，未檢查指令執行的伺服器。  
+導致主要資料庫300GB的資料刪到只剩下4.5G。
+
+--
+
+由此可見，<font size=3>~~Linux的效率多好！~~</font>檢查指令的重要性！  
+
+--
+
+影子模仿術！  
+![](https://04.imgmini.eastday.com/mobile/20180504/20180504143642_a9f278dc9a8def9e96947abd3c16a52b_1.jpeg)  
+```sh
+~> sudo su [user]
+```
+
+--
+
+## Debian Apt  
+```sh
+> sudo apt-get update
+> sudo apt-get upgrade
+```
+如果你很急著用電腦，就別輕易下upgrade....  
+
+--
+
+
 
 
