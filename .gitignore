@@ -6,6 +6,6 @@ db.json
 *.swo
 *.*~
 
-node_modules/
+node_modules/*
 public/
 .deploy*/
