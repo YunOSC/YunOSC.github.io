@@ -1,71 +1,44 @@
 <template>
   <div>
-    <div>
+    <div v-for="(value, key) in cadre" :key="key" v-if="!key.includes('//')" class="yearMenu">
+      <a :href="'#/cadre/' + key" v-on:click="clickTerm(key)" class="btn btn-primary">{{ value.term }}</a>
+    </div>
+    <div v-if="selectTerm != null" style="position: relative;">
+      <!--div>{{ cadre[selectYear].name }}</div>
+      <div>{{ cadre[selectYear].year }}</div-->
+      <info-card v-for="member in cadre[selectTerm].member" :key="member.id" :info="member"/>
     </div>
   </div>
 </template>
 
 <script>
-import { Timeline, TimelineItem, TimelineTitle } from 'vue-cute-timeline'
+import cadre from '../../assets/data/cadre.json'
+import InfoCard from '@/components/about/InfoCard'
 export default {
   name: 'Cadre',
+  components: { InfoCard },
+  mounted () {
+    this.selectTerm = this.$route.params.term
+    this.selectMember = this.$route.params.member
+  },
+  methods: {
+    clickTerm: function (value) {
+      this.selectTerm = value
+    }
+  },
   data () {
     return {
-      cadre: [
-        {
-          'name': '第二屆',
-          'year': 2018,
-          'member': [
-            {
-              'position': '社長',
-              'name': '李政憲',
-              'aka': 'None'
-            },
-            {
-              'position': '副社長',
-              'name': '蔡銘陽',
-              'aka': 'None'
-            },
-            {
-              'position': '教學長',
-              'name': '墨格里',
-              'aka': 'clooooode'
-            },
-            {
-              'position': '教學',
-              'name': '張郢展',
-              'aka': 'stavhaygn'
-            }
-          ]
-        },
-        {
-          'name': '第一屆',
-          'year': 2017,
-          'member': [
-            {
-              'position': '社長',
-              'name': '劉孝忠',
-              'aka': 'mino'
-            },
-            {
-              'position': '副社長',
-              'name': '黃彥璋',
-              'aka': 'None'
-            },
-            {
-              'position': '教學長',
-              'name': '徐廷佑',
-              'aka': '0夢'
-            },
-            {
-              'position': '教學',
-              'name': '墨格里',
-              'aka': 'clooooode'
-            },
-          ]
-        }
-      ]
+      selectTerm: null,
+      selectMember: null,
+      cadre
     }
   }
 }
 </script>
+
+<style scoped>
+  .yearMenu {
+    display: inline-block;
+    margin: 10px;
+  }
+</style>

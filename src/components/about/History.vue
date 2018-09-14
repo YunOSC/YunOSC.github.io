@@ -7,9 +7,6 @@
         <div></div>
       </timeline-item>
       <timeline-title>2017</timeline-title>
-      <timeline-item>
-        
-      </timeline-item>
     </timeline>
   </div>
 </template>
@@ -21,4 +18,3 @@ export default {
   components: { Timeline, TimelineItem, TimelineTitle }
 }
 </script>
-

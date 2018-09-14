@@ -21,7 +21,7 @@ export default new Router({
       component: History
     },
     {
-      path: '/cadre',
+      path: '/cadre/:term?/:member?',
       name: 'Cadre',
       component: Cadre
     },

@@ -1,0 +1,82 @@
+{
+    "//_termCount": {
+        "//_comment_01": "This is a comment block, remember to copy and modified.",
+        "//_comment_02": "Do not just directly edit!",
+        "term": "This is term Name",
+        "member": [
+            {
+                "id": -1,
+                "avatar": "facebook avatar of this person",
+                "position": "this person's position",
+                "name": "name",
+                "aka": "This field can be None."
+            }
+        ]
+    },
+    "2": {
+        "term": "第二屆",
+        "member": [
+            {
+                "id": 0,
+                "avatar": "https://scontent.fkhh1-2.fna.fbcdn.net/v/t1.0-1/c21.0.74.74/p74x74/1456646_481524398632318_1360059359_n.jpg?_nc_cat=101&oh=dfa317330e48b554a465217efb6bc411&oe=5C1B37A5",
+                "position": "社長",
+                "name": "李政憲",
+                "aka": "None"
+            },
+            {
+                "id": 1,
+                "avatar": "https://scontent.fkhh1-2.fna.fbcdn.net/v/t1.0-1/p50x50/15697790_595513760644415_8651178853896145987_n.jpg?_nc_cat=110&oh=689f8d67e68a98fb0156c1274764c9ed&oe=5BEDBFD2",
+                "position": "副社長",
+                "name": "蔡銘陽",
+                "aka": "None"
+            },
+            {
+                "id": 2,
+                "avatar": "https://scontent.fkhh1-2.fna.fbcdn.net/v/t1.0-1/c27.0.74.74/p74x74/23794764_1769772383057723_4761971016666269925_n.jpg?_nc_cat=110&oh=21a9677840d5eabaf58e06301ed8172c&oe=5C1E659A",
+                "position": "教學長",
+                "name": "墨格里",
+                "aka": "clooooode"
+            },
+            {
+                "id": 3,
+                "avatar": "https://scontent.fkhh1-2.fna.fbcdn.net/v/t1.0-1/c13.0.74.74/p74x74/27750816_1560992237350004_528830262005478258_n.jpg?_nc_cat=105&oh=a3a82863f10babd3566e5cc0533b91a3&oe=5C32DCEF",
+                "position": "教學",
+                "name": "張郢展",
+                "aka": "stavhaygn"
+            }
+        ]
+    },
+    "1": {
+        "term": "第一屆",
+        "member": [
+            {
+                "id": 0,
+                "avatar": "https://scontent.fkhh1-2.fna.fbcdn.net/v/t1.0-1/p74x74/14433058_1107000722717834_4547069584041096181_n.jpg?_nc_cat=104&oh=7c43df78f128171f5f50b909988f8d53&oe=5C367235",
+                "position": "社長",
+                "name": "劉孝忠",
+                "aka": "mino"
+            },
+            {
+                "id": 1,
+                "avatar": "https://scontent.fkhh1-2.fna.fbcdn.net/v/t1.0-1/p74x74/19260364_2021667267859601_7236849910189742820_n.jpg?_nc_cat=110&oh=7c8b20930a0c3efc9c30bd57c38e01be&oe=5C2844AE",
+                "position": "副社長",
+                "name": "黃彥璋",
+                "aka": "None"
+            },
+            {
+                "id": 2,
+                "avatar": "https://scontent.fkhh1-2.fna.fbcdn.net/v/t1.0-1/p74x74/40475462_292819138171952_1514942429675913216_n.jpg?_nc_cat=110&oh=a5592785cd9dbbb489ac169b3f60f2c9&oe=5C31C39C",
+                "position": "教學長",
+                "name": "徐廷佑",
+                "aka": "0夢"
+            },
+            {
+                "id": 3,
+                "avatar": "https://scontent.fkhh1-2.fna.fbcdn.net/v/t1.0-1/c27.0.74.74/p74x74/23794764_1769772383057723_4761971016666269925_n.jpg?_nc_cat=110&oh=21a9677840d5eabaf58e06301ed8172c&oe=5C1E659A",
+                "position": "教學",
+                "name": "墨格里",
+                "aka": "clooooode"
+            }
+        ]
+    }
+}
