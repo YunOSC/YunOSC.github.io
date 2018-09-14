@@ -20,11 +20,11 @@
             <div class="dropdown-item disabled">學期課程</div>
             <router-link to="/lesson/2017" class="dropdown-item">2018(107學年)</router-link>
             <div class="dropdown-divider"></div>
-            <div class="dropdown-item disabled">Lightning Talk</div>
-            <router-link to="/lt/2017" class="dropdown-item">2018(107學年)</router-link>
+            <router-link to="/lt" class="dropdown-item">Lightning Talk</router-link>
           </div>
         </li>
         <router-link to="/events" class="nav-item nav-link">活動 Events</router-link>
+        <a href="#introduction" v-smooth-scroll>a</a>
       </div>
     </div>
   </nav>

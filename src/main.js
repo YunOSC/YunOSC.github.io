@@ -8,8 +8,13 @@ import Navigator from '@/components/Navigator'
 
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
+import vueSmoothScroll from 'vue2-smooth-scroll'
 
 Vue.config.productionTip = false
+
+Vue.use(vueSmoothScroll, {
+  duration: 500
+})
 
 Vue.component('navigator', Navigator)
 

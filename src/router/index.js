@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import Index from '@/components/Index'
 import History from '@/components/about/History'
 import Cadre from '@/components/about/Cadre'
+import LightningTalk from '@/components/lesson/LightningTalk'
 import Events from '@/components/event/Events'
 
 Vue.use(Router)
@@ -13,7 +14,9 @@ export default new Router({
     {
       path: '/',
       name: 'Index',
-      component: Index
+      components: {
+        Index: Index
+      }
     },
     {
       path: '/history',
@@ -24,6 +27,11 @@ export default new Router({
       path: '/cadre/:term?/:member?',
       name: 'Cadre',
       component: Cadre
+    },
+    {
+      path: '/lt',
+      name: 'LightningTalk',
+      component: LightningTalk
     },
     {
       path: '/events',
